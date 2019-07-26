@@ -8,9 +8,9 @@ public class HelperAPI {
 
     // Overdue
     public void overdue_Begin() {
-        System.out.println(helperModel.get_DB_Address());
-        System.out.println(helperModel.get_DB_UserID());
-        System.out.println(helperModel.get_DB_Password());
+//        System.out.println(helperModel.get_DB_Address());
+//        System.out.println(helperModel.get_DB_UserID());
+//        System.out.println(helperModel.get_DB_Password());
 
         dbUtil.query_And_Make_Overdue_List(helperModel);
 

@@ -17,7 +17,7 @@ public class DBUtil {
 
     public DBUtil(String dbAddress, String userID, String password) {
         this.JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-        this.DB_ADDRESS = "jdbc:mysql://" + dbAddress + "?serverTimezone=UTC";
+        this.DB_ADDRESS = "jdbc:mysql://" + dbAddress + "?serverTimezone=UTC&characterEncoding=UTF-8";
         this.USERNAME = userID;
         this.PASSWORD = password;
 
