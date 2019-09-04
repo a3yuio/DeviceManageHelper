@@ -80,7 +80,7 @@ public class DBUtil {
             this.resultSet = statement.executeQuery(helperModel.get_DB_Query_LongRent());
 
             while(this.resultSet.next()) {
-                helperModel.add_LongRent_List(this.resultSet.getString("DeviceNo"), this.resultSet.getString("DeviceName"), this.resultSet.getString("Lender"), this.resultSet.getString("RentedDay"), this.resultSet.getString("Note"), this.resultSet.getString("Overdue"), this.resultSet.getString("LongReason"));
+                helperModel.add_LongRent_List(this.resultSet.getString("DeviceNo"), this.resultSet.getString("DeviceName"), this.resultSet.getString("RentedDay"), this.resultSet.getString("Note"), this.resultSet.getString("Overdue"), this.resultSet.getString("LongReason"));
             }
 
             this.resultSet.close();

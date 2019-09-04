@@ -40,11 +40,11 @@ public class HelperModel {
         this.dooray_HookURL_Hold = null;
         this.dooray_HookURL_LongRent = null;
 
-        this.result_Overdue_Title = "| 자산관리번호 |   기기명   |   대여자   |   대여일   |    비고    |\n";
+        this.result_Overdue_Title = "대여자 : 기기명 / 자산관리번호 / 대여일 / 비고\n------------------------------------------------------------------------\n";
         this.result_Overdue_List = "";
-        this.result_Hold_Title = "| 자산관리번호 |   기기명   |   OS   |  Version  |    비고    |  대여자  |  장기대여 사유  | 대여/반납 | 대여/반납 시간 |\n";
+        this.result_Hold_Title = "대여자 : 기기명 / 자산관리번호 / OS + Version / 장기대여 사유 / 비고 / 대여/반납 / 대여/반납 시간\n------------------------------------------------------------------------\n";
         this.result_Hold_List = "";
-        this.result_LongRent_Title = "| 자산관리번호 |   기기명   |   대여자   |   대여일   |    비고    |  대여일  | 장기대여 사유 |\n";
+        this.result_LongRent_Title = "비고 : 반납 예정일 / 기기명 / 자산관리번호 / 장기대여 사유 / 대여일\n------------------------------------------------------------------------\n";
         this.result_LongRent_List = "";
     }
     // Helper Info
@@ -149,7 +149,7 @@ public class HelperModel {
     }
 
     public void add_Overdue_List(String deviceNo, String deviceName, String lender, String rentedDay, String note) {
-        this.result_Overdue_List =  this.result_Overdue_List + "| " + deviceNo + " | " + deviceName + " | " + lender + " | " + rentedDay + " | " + note + " |\n";
+        this.result_Overdue_List =  this.result_Overdue_List + lender + " : " + deviceName+ " / " + deviceNo + " / " + rentedDay + " / " + note + "\n";
     }
 
     public void clean_Overdue_List() {
@@ -170,7 +170,7 @@ public class HelperModel {
     }
 
     public void add_Hold_List(String deviceNo, String deviceName, String os, String version, String note, String lender, String longReason, String action, String actionTime) {
-        this.result_Hold_List = this.result_Hold_List + "| " + deviceNo + " | " + deviceName + " | " + os + " | " + version + " | " + note + " | " + lender + " | " + longReason + " | " + action + " | " + actionTime + " |\n";
+        this.result_Hold_List = this.result_Hold_List + lender + " : " + deviceName + " / " + deviceNo + " / " + os + " " + version + " / " + longReason + " / " + note + " / " + action + " / " + actionTime + "\n";
     }
 
     public void clean_Hold_List() {
@@ -190,8 +190,8 @@ public class HelperModel {
         return this.result_LongRent_Title + this.result_LongRent_List;
     }
 
-    public void add_LongRent_List(String deviceNo, String deviceName, String lender, String rentedDay, String note, String overdue, String longReason) {
-        this.result_LongRent_List = this.result_LongRent_List + "| " + deviceNo + " | " + deviceName + " | " + lender + " | " + rentedDay + " | " + note + " | " + overdue + " | " + longReason + " |\n";
+    public void add_LongRent_List(String deviceNo, String deviceName, String rentedDay, String note, String overdue, String longReason) {
+        this.result_LongRent_List = this.result_LongRent_List + note + " : " + overdue + " / " + deviceName + " / " + deviceNo + " / " + longReason + " / " + rentedDay + "\n";
     }
 
     public void clean_LongRent_List() {
