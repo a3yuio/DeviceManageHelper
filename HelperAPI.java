@@ -22,15 +22,15 @@ public class HelperAPI {
     }
 
     public void send_To_Dooray_Overdue() {
-        if(helperModel.is_There_Overdue() == true) {
+//        if(helperModel.is_There_Overdue() == true) {
             doorayUtil.make_JSON_Object(helperModel,"미반납자 알림", helperModel.get_Result_Overdue_List());
             doorayUtil.send_Dooray_Message(helperModel.get_Dooray_HookURL_Overdue());
             doorayUtil.clean_JSON_Object();
-        } else {
-            doorayUtil.make_JSON_Object(helperModel,"미반납자 알림", "축하드립니다.\n미반납자가 없습니다.");
-            doorayUtil.send_Dooray_Message(helperModel.get_Dooray_HookURL_Overdue());
-            doorayUtil.clean_JSON_Object();
-        }
+//        } else if(helperModel.is_There_Overdue() == false) {
+//            doorayUtil.make_JSON_Object(helperModel,"미반납자 알림", "축하드립니다.\n미반납자가 없습니다.");
+//            doorayUtil.send_Dooray_Message(helperModel.get_Dooray_HookURL_Overdue());
+//            doorayUtil.clean_JSON_Object();
+//        }
     }
 
     // Hold

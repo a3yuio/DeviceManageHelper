@@ -40,7 +40,7 @@ public class HelperModel {
         this.dooray_HookURL_Hold = null;
         this.dooray_HookURL_LongRent = null;
 
-        this.result_Overdue_Title = "대여자 : 기기명 / 자산관리번호 / 대여일 / 비고\n------------------------------------------------------------------------\n";
+        this.result_Overdue_Title = "";
         this.result_Overdue_List = "";
         this.result_Hold_Title = "대여자 : 기기명 / 자산관리번호 / OS + Version / 장기대여 사유 / 비고 / 대여/반납 / 대여/반납 시간\n------------------------------------------------------------------------\n";
         this.result_Hold_List = "";
@@ -152,8 +152,16 @@ public class HelperModel {
         this.result_Overdue_List =  this.result_Overdue_List + lender + " : " + deviceName+ " / " + deviceNo + " / " + rentedDay + " / " + note + "\n";
     }
 
+    public void set_Overdue_List(String txt) {
+        this.result_Overdue_List = txt;
+    }
+
     public void clean_Overdue_List() {
         this.result_Overdue_List = "";
+    }
+
+    public void init_Overdue_Title() {
+        this.result_Overdue_Title = "대여자 : 기기명 / 자산관리번호 / 대여일 / 비고\n------------------------------------------------------------------------\n";
     }
 
     //// Hold
