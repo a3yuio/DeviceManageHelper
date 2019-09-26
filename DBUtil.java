@@ -34,11 +34,12 @@ public class DBUtil {
             this.statement = this.connection.createStatement();
             this.resultSet = statement.executeQuery(helperModel.get_DB_Query_Overdue());
 
-            helperModel.set_Overdue_List("미반납자가 없습니다.");
-
             while(this.resultSet.next()) {
                 helperModel.init_Overdue_Title();
-                helperModel.clean_Overdue_List();
+                if(helperModel.is_There_Overdue() == false) {
+                    helperModel.clean_Overdue_List();
+                }
+
 
                 // 비고가 null 일 때
                 if(this.resultSet.getString("Note") == null) {
@@ -46,6 +47,14 @@ public class DBUtil {
                 } else {
                     helperModel.add_Overdue_List(this.resultSet.getString("DeviceNo"), this.resultSet.getString("DeviceName"), this.resultSet.getString("Lender"), this.resultSet.getString("RentedDay"), this.resultSet.getString("Note"));
                 }
+            }
+
+//            if(helperModel.is_There_Overdue() == true) {
+//                helperModel.init_Overdue_Title();
+//            }
+
+            if(helperModel.is_There_Overdue() == false) {
+                helperModel.set_Overdue_List("미반납자가 없습니다.");
             }
 
             this.resultSet.close();
