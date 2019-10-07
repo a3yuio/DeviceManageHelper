@@ -14,7 +14,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while(true) {
-            System.out.println("원하시는 작업을 선택하세요 (exit = 936)");
+            System.out.println("***Device Manage Helper (By. Yong) Ver. 1.0***\n");
+            System.out.println("* 원하시는 작업을 선택하세요 (exit = 936)\n");
             System.out.println("1. 디바이스 미반납자 검색");
             System.out.println("2. n일 간 대여/반납 기록이 없는 디바이스 검색");
             System.out.println("3. 장기대여 반납 n일 전인 디바이스 검색");

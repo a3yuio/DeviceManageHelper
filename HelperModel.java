@@ -31,7 +31,7 @@ public class HelperModel {
     public HelperModel() {
         this.filePath_HookURL = "C:\\DeviceManageHelper\\Resource\\Dooray\\HookURL.txt";
         this.filePath_DBInfo = "C:\\DeviceManageHelper\\Resource\\DB\\DBInfo.txt";
-        
+
         this.db_Query_Overdue = "SELECT DeviceNo,DeviceName,Lender,RentedDay,Note FROM device.devices WHERE NOT DeviceName LIKE \"%(%\" AND Overdue <= current_date() ORDER BY Lender";
 
         this.dooray_BotName = "BOGUS_BOT";
